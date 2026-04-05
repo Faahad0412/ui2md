@@ -32,6 +32,7 @@ ui-extractor-saas/
 * **Task 1.4 (Bug Fix):** Free Tier bypass update. `api/scrape.js` mein model `'gemini-1.5-flash'` set kiya gaya hai taake active free tier resources use ho sakein. GitHub commit `aa02fe5` pushed.
 * **Task 1.5 (Bug Fix):** Ultimate Model Fix. `api/scrape.js` mein model strictly `'gemini-2.5-flash'` set kiya gaya hai. GitHub commit `3a2f029` force-pushed.
 * **Task 11:** Download Markdown feature complete. `frontend/src/App.jsx` mein `Download` icon ke sath button add kiya gaya. `handleDownload` function `Blob URL` technique use kar ke `ui2md-design.md` file generate kar raha hai. GitHub commit `42010cf` pushed.
+* **Task 12:** Dynamic Naming & Prompt Optimization complete. `api/scrape.js` mein URL se hostname extract kar ke prompt mein integrate kiya gaya. Prompt ko optimize kiya gaya taake short descriptions aur strictly code-only output mile (quota saving). GitHub commit `96ee0b0` pushed.
 
 ## 🧩 4. Core Logic & AI Agent Rules
 * **Rule 1 (Hyper-Focus):** Ek waqt mein sirf aur sirf **EK Task** execute karna hai.
@@ -40,13 +41,12 @@ ui-extractor-saas/
 * **Rule 4:** Task complete hone par `working.md` lazmi update karo.
 
 ## 🚧 5. Active Task (Focus on ONE at a time)
-* **Task 12:** Dynamic Naming & Prompt Optimization (Quota Saving).
-  1. `api/scrape.js` open karo.
-  2. Frontend se jo `url` aa raha hai, usko parse kar ke hostname nikalo (e.g., `new URL(url).hostname`).
-  3. Gemini ke prompt ko completely rewrite karo taa ke kam se kam tokens (quota) use hon. Prompt mein yeh strict rules add karo:
-     - *"Analyze this CSS JSON from ${hostname}."*
-     - *"Return ONLY the raw Markdown text for DESIGN.md. No introductory or concluding remarks. No filler words."*
-     - *"Use '${hostname} Design System' as the main H1 title."*
-     - *"Keep section descriptions extremely brief to save tokens. Focus only on Colors, Typography, Spacing, and Button variables."*
-  4. Git commit (`"Feat: Dynamic naming and prompt token optimization"`) kar ke GitHub par push karo.
-  5. Task complete hone par `working.md` update karo.
+* **Task 13:** SaaS Landing Page & Routing Implementation.
+  1. Frontend folder mein terminal open karo aur `react-router-dom` install karo (`npm install react-router-dom`).
+  2. `frontend/src/` mein 2 naye components banao: `LandingPage.jsx` aur `ExtractorApp.jsx`.
+  3. Purane `App.jsx` ka saara UI aur logic (extraction tool) `ExtractorApp.jsx` mein move kar do.
+  4. `LandingPage.jsx` mein Tailwind aur Lucide Icons use kar ke ek premium SaaS landing page design karo (Hero section, Features list, aur ek "Get Started" button).
+  5. `App.jsx` ko update kar ke usme `<BrowserRouter>` aur Routes define karo: `/` par `LandingPage` aur `/app` par `ExtractorApp` render ho.
+  6. "Get Started" button par click karne se user `/app` route par navigate hona chahiye.
+  7. Local server par test karo, successful hone par `"Feat: Added SaaS Landing Page & Routing"` commit ke sath GitHub par push karo taa ke Vercel update ho jaye.
+  8. Task complete hone par `working.md` update karo.
