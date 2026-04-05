@@ -28,6 +28,12 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ error: 'URL is required' });
   }
 
+  // BYOK: Extract user's Gemini API key from request header
+  const geminiKey = req.headers['x-gemini-key'];
+  if (!geminiKey) {
+    return res.status(401).json({ error: 'Unauthorized: Please provide your Gemini API Key via the Settings panel.' });
+  }
+
   let browser = null;
   try {
     // Detect local development vs Vercel production
@@ -94,36 +100,16 @@ module.exports = async function handler(req, res) {
 
     await browser.close();
 
-    // Generate Markdown via Gemini AI
+    // Generate Markdown via Gemini AI using USER's key (BYOK)
     let markdown = '';
-    const apiKey = process.env.GEMINI_API_KEY;
-
-    if (!apiKey || apiKey === 'your_api_key_here') {
-      markdown = `# 🎨 DESIGN.md (Mocked Output)
-
-> **Note:** Add a real \`GEMINI_API_KEY\` in your environment variables to get AI-generated output.
-
-## Color Palette
-- **Background:** \`${designTokens.body.backgroundColor}\`
-- **Primary Text:** \`${designTokens.body.color}\`
-- **Button Background:** \`${designTokens.button.backgroundColor}\`
-- **Button Text:** \`${designTokens.button.color}\`
-
-## Typography
-- **Heading (H1):** \`${designTokens.typography.h1FontFamily}\`
-- **Paragraph:** \`${designTokens.typography.pFontFamily}\`
-
-## Component Styles
-### Button
-- **Background:** \`${designTokens.button.backgroundColor}\`
-- **Color:** \`${designTokens.button.color}\`
-- **Border Radius:** \`${designTokens.button.borderRadius}\``;
-    } else {
-      const genAI = new GoogleGenerativeAI(apiKey);
+    try {
+      const genAI = new GoogleGenerativeAI(geminiKey);
       const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
       const prompt = `Act as an expert UI designer. Take this raw CSS JSON and convert it into a highly structured, premium DESIGN.md format. Include sections for Color Palette, Typography, and Component Styles. JSON: ${JSON.stringify(designTokens)}`;
       const result = await model.generateContent(prompt);
       markdown = result.response.text();
+    } catch (aiError) {
+      return res.status(400).json({ error: `Gemini AI Error: ${aiError.message}. Check your API key.` });
     }
 
     // Future: Save to Supabase

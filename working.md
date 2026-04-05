@@ -25,6 +25,8 @@ ui-extractor-saas/
 * **Task 1.1 (Bug Fix):** Git system par install nahi tha — `winget` se Git v2.53 install kar diya gaya hai.
 * **Task 7:** Git Version Control setup complete. `git init`, `.gitignore` verify, initial commit (`9df60e9`) aur GitHub push successfully complete. Repo live hai: https://github.com/Faahad0412/ui2md
 * **Task 8:** Vercel Serverless Migration complete. Express backend replace ho gaya — `api/scrape.js` serverless function ban gaya hai. `@sparticuz/chromium` + `puppeteer-core` + `@supabase/supabase-js` install aur configure ho gaye hain. Frontend `/api/scrape` (relative URL) use kar raha hai. Local test successful (`https://example.com` ka DESIGN.md generated).
+* **Task 9:** Supabase Schema aur Documentation complete. `database.sql` mein `extractions` table ka full SQL schema (UUID, RLS policies, indexes) likha gaya. `README.md` ko premium open-source SaaS standard ke mutabiq update kiya — Tech Stack, Local Setup, Supabase Setup, Vercel Deploy, aur API Reference shamil hain. GitHub commit `90c8b88` pushed.
+* **Task 10:** BYOK (Bring Your Own Key) Architecture implement ho gaya hai. Frontend mein Settings modal add kiya gaya hai jo Gemini API Key ko `localStorage` mein save karta hai. Backend (`api/scrape.js`) ab request headers se `x-gemini-key` use karta hai. Local testing inclusive of 401 Unauthorized successful.
 
 ## 🧩 4. Core Logic & AI Agent Rules
 * **Rule 1 (Hyper-Focus):** Ek waqt mein sirf aur sirf **EK Task** execute karna hai.
@@ -33,8 +35,4 @@ ui-extractor-saas/
 * **Rule 4:** Task complete hone par `working.md` lazmi update karo.
 
 ## 🚧 5. Active Task (Focus on ONE at a time)
-* **Task 9:** Supabase Database Schema & Final Documentation.
-  1. Root folder mein ek `database.sql` file banao jisme Supabase ke liye `extractions` table bananey ki SQL query ho (columns: `id` (uuid), `url` (text), `design_markdown` (text), `created_at` (timestamp)).
-  2. `README.md` file ko completely update karo jisme "Tech Stack", "How to Deploy on Vercel", aur "Supabase Setup" ke proper steps likhe hon.
-  3. In naye changes ko dobara GitHub par push karo (`git add .`, `git commit -m "Added Supabase schema and updated Docs"`, `git push`).
-  4. Task complete hone par `working.md` update karo.
+* *(All Tasks Complete)*
