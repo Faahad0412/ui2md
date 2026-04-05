@@ -27,6 +27,7 @@ ui-extractor-saas/
 * **Task 8:** Vercel Serverless Migration complete. Express backend replace ho gaya — `api/scrape.js` serverless function ban gaya hai. `@sparticuz/chromium` + `puppeteer-core` + `@supabase/supabase-js` install aur configure ho gaye hain. Frontend `/api/scrape` (relative URL) use kar raha hai. Local test successful (`https://example.com` ka DESIGN.md generated).
 * **Task 9:** Supabase Schema aur Documentation complete. `database.sql` mein `extractions` table ka full SQL schema (UUID, RLS policies, indexes) likha gaya. `README.md` ko premium open-source SaaS standard ke mutabiq update kiya — Tech Stack, Local Setup, Supabase Setup, Vercel Deploy, aur API Reference shamil hain. GitHub commit `90c8b88` pushed.
 * **Task 10:** BYOK (Bring Your Own Key) Architecture implement ho gaya hai. Frontend mein Settings modal add kiya gaya hai jo Gemini API Key ko `localStorage` mein save karta hai. Backend (`api/scrape.js`) ab request headers se `x-gemini-key` use karta hai. Local testing inclusive of 401 Unauthorized successful.
+* **Task 1.2 (Bug Fix):** Gemini model string update complete. `api/scrape.js` mein `gemini-1.5-flash` ko `gemini-1.5-pro` se replace kiya gaya hai 404 error fix karne ke liye. GitHub commit `0a0b6f7` pushed.
 
 ## 🧩 4. Core Logic & AI Agent Rules
 * **Rule 1 (Hyper-Focus):** Ek waqt mein sirf aur sirf **EK Task** execute karna hai.
@@ -35,8 +36,4 @@ ui-extractor-saas/
 * **Rule 4:** Task complete hone par `working.md` lazmi update karo.
 
 ## 🚧 5. Active Task (Focus on ONE at a time)
-* **Task 1.2 (Bug Fix):** Fix Gemini API 404 Error.
-  1. `api/scrape.js` open karo.
-  2. Jahan `genAI.getGenerativeModel({ model: 'gemini-1.5-flash' })` likha hai, wahan model string ko change kar ke `'gemini-1.5-pro'` ya `'gemini-pro'` kar do.
-  3. Git add, commit (`"Fix: Updated Gemini model string to resolve 404"`), aur push karo taa ke Vercel auto-deploy kar sake.
-  4. Task complete hone par `working.md` update karo.
+* *(All Tasks Complete)*
