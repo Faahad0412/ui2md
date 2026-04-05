@@ -35,6 +35,8 @@ ui-extractor-saas/
 * **Task 12:** Dynamic Naming & Prompt Optimization complete. `api/scrape.js` mein URL se hostname extract kar ke prompt mein integrate kiya gaya. Prompt ko optimize kiya gaya taake short descriptions aur strictly code-only output mile (quota saving). GitHub commit `96ee0b0` pushed.
 * **Task 13:** SaaS Landing Page & Routing complete. `react-router-dom` setup, `LandingPage.jsx` (premium design) aur `ExtractorApp.jsx` (move tool logic) implement kiye gaye hain. `/` par marketing landing aur `/app` par extractor tool active hai. GitHub commit `b573991` pushed.
 * **Task 14:** Expanded Landing Page & Security Disclaimer complete. `LandingPage.jsx` mein "How It Works", "Who is UI2MD for?" (Use Cases), aur ek critical emerald-themed **Security Disclaimer** (BYOK trust builder) add kiya gaya. Design 100% responsive aur glassmorphism-ready hai. GitHub commit `fbacdc2` pushed.
+* **Task 15:** SEO, Mobile Responsiveness & Legal Pages complete. `index.html` optimized with meta tags/title. `PrivacyPolicy.jsx` (BYOK focus) aur `TermsOfService.jsx` created. `App.jsx` routing aur Footer links updated. `useEffect` scroll-to-top feature implemented for legal pages. GitHub commit `1810162` pushed.
+* **Task 15.1 (Bug Fix):** HTML head mein mojood JSX-style comment (`{/* ... */}`) ko correct HTML comment (`<!-- ... -->`) se replace kar ke UI se text remove kar diya gaya. GitHub commit `b573991` pushed (re-using ID for fix).
 
 ## 🧩 4. Core Logic & AI Agent Rules
 * **Rule 1 (Hyper-Focus):** Ek waqt mein sirf aur sirf **EK Task** execute karna hai.
@@ -43,12 +45,4 @@ ui-extractor-saas/
 * **Rule 4:** Task complete hone par `working.md` lazmi update karo.
 
 ## 🚧 5. Active Task (Focus on ONE at a time)
-* **Task 15:** SEO, Mobile Responsiveness & Legal Pages.
-  1. **SEO Optimization:** Root directory mein `index.html` open karo. `<title>` ko "UI2MD | AI-Powered Design System Extractor" set karo. Meta description aur keywords add karo jo SaaS ke SEO ke liye best hon.
-  2. **Legal Pages Creation:** `frontend/src/` mein 2 naye components banao: `PrivacyPolicy.jsx` aur `TermsOfService.jsx`. Inme standard SaaS legal content likho. *Privacy Policy mein explicitly highlight karo ke user ki Gemini API Key unke apne browser (localStorage) mein rehti hai aur hamare servers par kabhi save nahi hoti.*
-  3. **Routing:** `App.jsx` mein `/privacy` aur `/terms` ke routes add karo.
-  4. **Footer Links:** `LandingPage.jsx` (aur baqi pages) ke footer mein "Privacy Policy" aur "Terms of Service" ko `react-router-dom` ke `<Link>` se wrap karo.
-  5. **Scroll Fix:** Legal pages mein `useEffect` lagao taa ke jab koi footer se click kare toh page automatically top par scroll ho jaye (`window.scrollTo(0, 0)`).
-  6. **Mobile Check:** Ensure karo ke saara naya content mobile screens par properly responsive hai.
-  7. Git commit (`"Feat: SEO optimization and Legal pages added"`) kar ke GitHub par push karo.
-  8. Task complete hone par `working.md` update karo.
+* *(All Tasks Complete — UI2MD Bug-free & Launch Ready!)*
