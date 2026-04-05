@@ -28,6 +28,8 @@ ui-extractor-saas/
 * **Task 9:** Supabase Schema aur Documentation complete. `database.sql` mein `extractions` table ka full SQL schema (UUID, RLS policies, indexes) likha gaya. `README.md` ko premium open-source SaaS standard ke mutabiq update kiya — Tech Stack, Local Setup, Supabase Setup, Vercel Deploy, aur API Reference shamil hain. GitHub commit `90c8b88` pushed.
 * **Task 10:** BYOK (Bring Your Own Key) Architecture implement ho gaya hai. Frontend mein Settings modal add kiya gaya hai jo Gemini API Key ko `localStorage` mein save karta hai. Backend (`api/scrape.js`) ab request headers se `x-gemini-key` use karta hai. Local testing inclusive of 401 Unauthorized successful.
 * **Task 1.2 (Bug Fix):** Gemini model string update complete. `api/scrape.js` mein `gemini-1.5-flash` ko `gemini-1.5-pro` se replace kiya gaya hai 404 error fix karne ke liye. GitHub commit `0a0b6f7` pushed.
+* **Task 1.3 (Bug Fix):** Final update for model string. `api/scrape.js` mein model `'gemini-pro-latest'` set kiya gaya hai as per AI Studio guidelines. GitHub commit `af4ad99` pushed.
+* **Task 1.4 (Bug Fix):** Free Tier bypass update. `api/scrape.js` mein model `'gemini-1.5-flash'` set kiya gaya hai taake active free tier resources use ho sakein. GitHub commit `aa02fe5` pushed.
 
 ## 🧩 4. Core Logic & AI Agent Rules
 * **Rule 1 (Hyper-Focus):** Ek waqt mein sirf aur sirf **EK Task** execute karna hai.
@@ -36,4 +38,8 @@ ui-extractor-saas/
 * **Rule 4:** Task complete hone par `working.md` lazmi update karo.
 
 ## 🚧 5. Active Task (Focus on ONE at a time)
-* *(All Tasks Complete)*
+* **Task 1.5 (Bug Fix):** Ultimate Model Fix (`gemini-2.5-flash`).
+  1. `api/scrape.js` ko carefully open karo.
+  2. Dhoondo ke model kahan define hai aur usay strictly `model: 'gemini-2.5-flash'` kar do (bina kisi typo ke).
+  3. Git add, commit (`"Fix: Hardcoded model to gemini-2.5-flash"`), aur force push karo.
+  4. Task complete hone par `working.md` update karo.
