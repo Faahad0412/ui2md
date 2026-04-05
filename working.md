@@ -35,4 +35,8 @@ ui-extractor-saas/
 * **Rule 4:** Task complete hone par `working.md` lazmi update karo.
 
 ## 🚧 5. Active Task (Focus on ONE at a time)
-* *(All Tasks Complete)*
+* **Task 1.2 (Bug Fix):** Fix Gemini API 404 Error.
+  1. `api/scrape.js` open karo.
+  2. Jahan `genAI.getGenerativeModel({ model: 'gemini-1.5-flash' })` likha hai, wahan model string ko change kar ke `'gemini-1.5-pro'` ya `'gemini-pro'` kar do.
+  3. Git add, commit (`"Fix: Updated Gemini model string to resolve 404"`), aur push karo taa ke Vercel auto-deploy kar sake.
+  4. Task complete hone par `working.md` update karo.
