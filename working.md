@@ -31,6 +31,7 @@ ui-extractor-saas/
 * **Task 1.3 (Bug Fix):** Final update for model string. `api/scrape.js` mein model `'gemini-pro-latest'` set kiya gaya hai as per AI Studio guidelines. GitHub commit `af4ad99` pushed.
 * **Task 1.4 (Bug Fix):** Free Tier bypass update. `api/scrape.js` mein model `'gemini-1.5-flash'` set kiya gaya hai taake active free tier resources use ho sakein. GitHub commit `aa02fe5` pushed.
 * **Task 1.5 (Bug Fix):** Ultimate Model Fix. `api/scrape.js` mein model strictly `'gemini-2.5-flash'` set kiya gaya hai. GitHub commit `3a2f029` force-pushed.
+* **Task 11:** Download Markdown feature complete. `frontend/src/App.jsx` mein `Download` icon ke sath button add kiya gaya. `handleDownload` function `Blob URL` technique use kar ke `ui2md-design.md` file generate kar raha hai. GitHub commit `42010cf` pushed.
 
 ## 🧩 4. Core Logic & AI Agent Rules
 * **Rule 1 (Hyper-Focus):** Ek waqt mein sirf aur sirf **EK Task** execute karna hai.
@@ -39,10 +40,13 @@ ui-extractor-saas/
 * **Rule 4:** Task complete hone par `working.md` lazmi update karo.
 
 ## 🚧 5. Active Task (Focus on ONE at a time)
-* **Task 11:** Implement Download Markdown Feature.
-  1. `frontend/src/App.jsx` mein (jahan "Copy to Clipboard" ka button hai), ek naya button add karo: "Download .md". Usme Lucide React se `Download` ka icon lagao.
-  2. Ek function likho `handleDownload()`:
-     - Jo API se aya hua `markdown` text le.
-     - Ek `Blob` object banaye type `text/markdown` ke sath.
-     - Ek temporary `<a>` tag create kare, usko `URL.createObjectURL(blob)` de, `download="ui2md-design.md"` set kare, usay programmatically click kare, aur phir URL ko revoke kar de.
-  3. Local test karo, successful hone par GitHub par push karo aur `working.md` update karo.
+* **Task 12:** Dynamic Naming & Prompt Optimization (Quota Saving).
+  1. `api/scrape.js` open karo.
+  2. Frontend se jo `url` aa raha hai, usko parse kar ke hostname nikalo (e.g., `new URL(url).hostname`).
+  3. Gemini ke prompt ko completely rewrite karo taa ke kam se kam tokens (quota) use hon. Prompt mein yeh strict rules add karo:
+     - *"Analyze this CSS JSON from ${hostname}."*
+     - *"Return ONLY the raw Markdown text for DESIGN.md. No introductory or concluding remarks. No filler words."*
+     - *"Use '${hostname} Design System' as the main H1 title."*
+     - *"Keep section descriptions extremely brief to save tokens. Focus only on Colors, Typography, Spacing, and Button variables."*
+  4. Git commit (`"Feat: Dynamic naming and prompt token optimization"`) kar ke GitHub par push karo.
+  5. Task complete hone par `working.md` update karo.

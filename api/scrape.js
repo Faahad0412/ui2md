@@ -102,10 +102,18 @@ module.exports = async function handler(req, res) {
 
     // Generate Markdown via Gemini AI using USER's key (BYOK)
     let markdown = '';
+    const hostname = new URL(url).hostname;
     try {
       const genAI = new GoogleGenerativeAI(geminiKey);
       const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
-      const prompt = `Act as an expert UI designer. Take this raw CSS JSON and convert it into a highly structured, premium DESIGN.md format. Include sections for Color Palette, Typography, and Component Styles. JSON: ${JSON.stringify(designTokens)}`;
+      
+      const prompt = `Analyze this CSS JSON from ${hostname}. 
+Return ONLY raw Markdown for DESIGN.md. No greetings, no intro/outro filler.
+Title: # ${hostname} Design System 
+Briefly document: Colors, Typography, Spacing, and Button variables.
+Keep descriptions ultra-short to save tokens.
+JSON: ${JSON.stringify(designTokens)}`;
+
       const result = await model.generateContent(prompt);
       markdown = result.response.text();
     } catch (aiError) {
