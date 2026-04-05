@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, Zap, ShieldCheck, Globe, Code2, ArrowRight } from 'lucide-react';
+import { Sparkles, Zap, ShieldCheck, Globe, Code2, ArrowRight, Link as LinkIcon, Terminal, Layers, Monitor, ShoppingCart, CheckCircle2 } from 'lucide-react';
 
 function LandingPage() {
   return (
@@ -30,7 +30,7 @@ function LandingPage() {
       </nav>
 
       {/* Hero Section */}
-      <header className="relative z-10 pt-20 pb-32 px-6 max-w-7xl mx-auto text-center">
+      <header className="relative z-10 pt-20 pb-12 px-6 max-w-7xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-bold tracking-widest uppercase mb-8 animate-in fade-in slide-in-from-bottom-4">
           <Zap size={14} className="fill-indigo-500/50" />
           AI Powered Design Extraction
@@ -67,47 +67,197 @@ function LandingPage() {
         </div>
       </header>
 
+      {/* Security Disclaimer Banner */}
+      <section className="relative z-10 px-6 max-w-5xl mx-auto mb-12 animate-in fade-in zoom-in duration-1000">
+        <div className="p-6 rounded-3xl bg-emerald-500/5 border border-emerald-500/20 backdrop-blur-2xl shadow-2xl shadow-emerald-500/5 flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
+          <div className="p-3 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 shadow-inner">
+            <ShieldCheck className="w-8 h-8 text-emerald-400" />
+          </div>
+          <div className="flex-1 space-y-1">
+            <h4 className="text-emerald-400 font-bold text-lg leading-tight">100% Private & Secure BYOK Model</h4>
+            <p className="text-slate-400 text-sm md:text-base font-medium">
+              We do <span className="text-emerald-300 font-bold underline underline-offset-4 decoration-emerald-500/40">NOT</span> store your Gemini API key on our servers. It is strictly saved in your browser's local storage and used directly from your client.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Features Grid */}
-      <section className="relative z-10 py-32 px-6 max-w-7xl mx-auto">
+      <section className="relative z-10 py-20 px-6 max-w-7xl mx-auto">
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight">Powerful Design Analysis</h2>
+          <p className="text-slate-400 font-medium">Engineered for accuracy, built for privacy.</p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          <div className="p-8 rounded-3xl bg-slate-900/40 border border-slate-800/50 backdrop-blur-xl hover:border-indigo-500/30 transition-all group">
-            <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 flex items-center justify-center mb-6 border border-indigo-500/20 group-hover:bg-indigo-500/20 transition-colors">
-              <Globe className="w-6 h-6 text-indigo-400" />
+          <div className="p-8 rounded-3xl bg-slate-900/40 border border-slate-800/50 backdrop-blur-xl hover:border-indigo-500/30 transition-all group hover:-translate-y-1 duration-300">
+            <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center mb-6 border border-indigo-500/20 group-hover:bg-indigo-500/20 transition-colors shadow-lg shadow-indigo-500/5">
+              <Globe className="w-7 h-7 text-indigo-400" />
             </div>
-            <h3 className="text-xl font-bold mb-4">Any Website</h3>
-            <p className="text-slate-400 font-medium leading-relaxed">
-              Just paste a URL. Our headless engine scrapes real computed styles directly from the browser.
+            <h3 className="text-xl font-bold mb-4 text-white">Any Website</h3>
+            <p className="text-slate-400 font-medium leading-relaxed text-sm md:text-base">
+              Just paste a URL. Our headless engine scrapes real computed styles directly from the browser's DOM tree.
             </p>
           </div>
 
-          <div className="p-8 rounded-3xl bg-slate-900/40 border border-slate-800/50 backdrop-blur-xl hover:border-indigo-500/30 transition-all group">
-            <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 flex items-center justify-center mb-6 border border-indigo-500/20 group-hover:bg-indigo-500/20 transition-colors">
-              <Sparkles className="w-6 h-6 text-indigo-400" />
+          <div className="p-8 rounded-3xl bg-slate-900/40 border border-slate-800/50 backdrop-blur-xl hover:border-indigo-500/30 transition-all group hover:-translate-y-1 duration-300">
+            <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center mb-6 border border-indigo-500/20 group-hover:bg-indigo-500/20 transition-colors shadow-lg shadow-indigo-500/5">
+              <Sparkles className="w-7 h-7 text-indigo-400" />
             </div>
-            <h3 className="text-xl font-bold mb-4">Gemini AI Engine</h3>
-            <p className="text-slate-400 font-medium leading-relaxed">
-              Google Gemini 1.5 Flash processes raw data into high-quality, professional markdown documentation.
+            <h3 className="text-xl font-bold mb-4 text-white">Gemini AI Engine</h3>
+            <p className="text-slate-400 font-medium leading-relaxed text-sm md:text-base">
+              Google Gemini 1.5 Flash processes raw data into high-quality, professional design documentation in seconds.
             </p>
           </div>
 
-          <div className="p-8 rounded-3xl bg-slate-900/40 border border-slate-800/50 backdrop-blur-xl hover:border-indigo-500/30 transition-all group">
-            <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 flex items-center justify-center mb-6 border border-indigo-500/20 group-hover:bg-indigo-500/20 transition-colors">
-              <ShieldCheck className="w-6 h-6 text-indigo-400" />
+          <div className="p-8 rounded-3xl bg-slate-900/40 border border-slate-800/50 backdrop-blur-xl hover:border-indigo-500/30 transition-all group hover:-translate-y-1 duration-300">
+            <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center mb-6 border border-indigo-500/20 group-hover:bg-indigo-500/20 transition-colors shadow-lg shadow-indigo-500/5">
+              <ShieldCheck className="w-7 h-7 text-indigo-400" />
             </div>
-            <h3 className="text-xl font-bold mb-4">BYOK Model</h3>
-            <p className="text-slate-400 font-medium leading-relaxed">
-              Bring Your Own Key. Full privacy — your API keys are stored only in your local browser storage.
+            <h3 className="text-xl font-bold mb-4 text-white">Secure Storage</h3>
+            <p className="text-slate-400 font-medium leading-relaxed text-sm md:text-base">
+              Full control over your data. Your API keys never touch our database, ensuring maximum security and zero leaks.
             </p>
           </div>
 
         </div>
       </section>
 
+      {/* How It Works Section */}
+      <section className="relative z-10 py-24 px-6 max-w-7xl mx-auto border-t border-slate-900">
+        <div className="text-center mb-20 space-y-4">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight">How It Works</h2>
+          <p className="text-slate-400 font-medium">From URL to Documentation in three simple steps.</p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+          {/* Connecting lines for desktop */}
+          <div className="hidden md:block absolute top-[2.5rem] left-[25%] right-[25%] h-0.5 bg-gradient-to-r from-transparent via-indigo-500/20 to-transparent" />
+
+          <div className="flex flex-col items-center text-center space-y-6 relative group">
+            <div className="w-20 h-20 rounded-3xl bg-slate-900 border border-slate-800 flex items-center justify-center text-indigo-400 shadow-xl group-hover:border-indigo-500 transition-all duration-500">
+              <LinkIcon className="w-10 h-10 group-hover:scale-110 transition-transform" />
+            </div>
+            <div className="space-y-2">
+              <h4 className="text-xl font-bold text-white">1. Input URL</h4>
+              <p className="text-slate-400 text-sm font-medium">Paste the link of the website you want to analyze.</p>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center text-center space-y-6 relative group">
+            <div className="w-20 h-20 rounded-3xl bg-slate-900 border border-slate-800 flex items-center justify-center text-indigo-400 shadow-xl group-hover:border-indigo-500 transition-all duration-500">
+              <Zap className="w-10 h-10 group-hover:scale-110 transition-transform fill-indigo-400/20" />
+            </div>
+            <div className="space-y-2">
+              <h4 className="text-xl font-bold text-white">2. AI Extraction</h4>
+              <p className="text-slate-400 text-sm font-medium">Our engine scrapes CSS and AI generates a design framework.</p>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center text-center space-y-6 relative group">
+            <div className="w-20 h-20 rounded-3xl bg-slate-900 border border-slate-800 flex items-center justify-center text-indigo-400 shadow-xl group-hover:border-indigo-500 transition-all duration-500">
+              <Layers className="w-10 h-10 group-hover:scale-110 transition-transform" />
+            </div>
+            <div className="space-y-2">
+              <h4 className="text-xl font-bold text-white">3. Get DESIGN.md</h4>
+              <p className="text-slate-400 text-sm font-medium">Download or copy your highly structured markdown file.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section className="relative z-10 py-24 px-6 max-w-7xl mx-auto bg-slate-900/10 rounded-[3rem] border border-slate-900/50 mb-20 backdrop-blur-sm">
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight">Who is UI2MD for?</h2>
+          <p className="text-slate-400 font-medium">Accelerating workflows across the design & dev landscape.</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="p-8 rounded-3xl bg-slate-950/50 border border-slate-800 hover:border-indigo-500/20 transition-all space-y-6">
+            <div className="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+              <Monitor className="w-6 h-6" />
+            </div>
+            <div className="space-y-2">
+              <h4 className="text-xl font-bold text-white">Design Agencies</h4>
+              <p className="text-slate-400 text-sm leading-relaxed font-medium">
+                Rapidly create style guides for existing client sites or analyze competitor layouts for inspiration.
+              </p>
+            </div>
+            <ul className="space-y-2">
+              <li className="flex items-center gap-2 text-xs font-bold text-slate-500"><CheckCircle2 className="w-3 h-3 text-emerald-500" /> Competitor Analysis</li>
+              <li className="flex items-center gap-2 text-xs font-bold text-slate-500"><CheckCircle2 className="w-3 h-3 text-emerald-500" /> Style Auditing</li>
+            </ul>
+          </div>
+
+          <div className="p-8 rounded-3xl bg-slate-950/50 border border-slate-800 hover:border-indigo-500/20 transition-all space-y-6">
+            <div className="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+              <Terminal className="w-6 h-6" />
+            </div>
+            <div className="space-y-2">
+              <h4 className="text-xl font-bold text-white">Full-stack Devs</h4>
+              <p className="text-slate-400 text-sm leading-relaxed font-medium">
+                Immediately convert a inspiration UI into a developer-friendly design system documentation.
+              </p>
+            </div>
+            <ul className="space-y-2">
+              <li className="flex items-center gap-2 text-xs font-bold text-slate-500"><CheckCircle2 className="w-3 h-3 text-emerald-500" /> Token Extraction</li>
+              <li className="flex items-center gap-2 text-xs font-bold text-slate-500"><CheckCircle2 className="w-3 h-3 text-emerald-500" /> Quick Prototyping</li>
+            </ul>
+          </div>
+
+          <div className="p-8 rounded-3xl bg-slate-950/50 border border-slate-800 hover:border-indigo-500/20 transition-all space-y-6 md:col-span-2 lg:col-span-1">
+            <div className="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+              <ShoppingCart className="w-6 h-6" />
+            </div>
+            <div className="space-y-2">
+              <h4 className="text-xl font-bold text-white">E-comm Owners</h4>
+              <p className="text-slate-400 text-sm leading-relaxed font-medium">
+                Analyze successful Shopify/E-comm stores to maintain visual consistency across your themes.
+              </p>
+            </div>
+            <ul className="space-y-2">
+              <li className="flex items-center gap-2 text-xs font-bold text-slate-500"><CheckCircle2 className="w-3 h-3 text-emerald-500" /> Branding Sync</li>
+              <li className="flex items-center gap-2 text-xs font-bold text-slate-500"><CheckCircle2 className="w-3 h-3 text-emerald-500" /> Market Research</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="relative z-10 py-32 px-6 text-center">
+        <div className="max-w-4xl mx-auto p-12 rounded-[3.5rem] bg-gradient-to-br from-indigo-600/20 via-indigo-900/10 to-transparent border border-indigo-500/20 shadow-2xl relative overflow-hidden group">
+          <div className="absolute inset-0 bg-indigo-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 blur-3xl pointer-events-none" />
+          <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight">Ready to extract?</h2>
+          <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto font-medium">Join developers and designers building faster with AI-powered design extraction.</p>
+          <Link 
+            to="/app" 
+            className="inline-flex items-center gap-3 px-10 py-5 bg-white text-slate-950 rounded-[2rem] font-black text-xl hover:bg-slate-100 transition-all shadow-2xl hover:scale-105 active:scale-95"
+          >
+            Launch UI2MD Now
+            <ArrowRight size={24} />
+          </Link>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="relative z-10 py-20 px-6 text-center border-t border-slate-900">
-        <p className="text-slate-500 font-medium">
-          Made with ✨ by <a href="#" className="text-indigo-400 hover:underline">Faahad0412</a>
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="flex items-center gap-2">
+            <Sparkles className="w-5 h-5 text-indigo-400" />
+            <span className="text-xl font-black tracking-tighter text-white">UI2MD</span>
+          </div>
+          <p className="text-slate-500 font-medium order-3 md:order-2">
+            © 2026 UI2MD Extractor. Built on <span className="text-indigo-400 font-bold">Bring Your Own Key</span> model.
+          </p>
+          <div className="flex items-center gap-6 text-sm font-bold text-slate-400 order-2 md:order-3">
+            <a href="#" className="hover:text-white transition">Privacy</a>
+            <a href="#" className="hover:text-white transition">Terms</a>
+            <a href="https://github.com/Faahad0412/ui2md" className="hover:text-white transition">GitHub</a>
+          </div>
+        </div>
+        <p className="mt-12 text-slate-600 text-xs font-bold uppercase tracking-[0.2em]">
+          Designed by <a href="#" className="text-slate-400 hover:text-indigo-400 transition">Faahad0412</a>
         </p>
       </footer>
 

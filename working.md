@@ -33,6 +33,7 @@ ui-extractor-saas/
 * **Task 1.5 (Bug Fix):** Ultimate Model Fix. `api/scrape.js` mein model strictly `'gemini-2.5-flash'` set kiya gaya hai. GitHub commit `3a2f029` force-pushed.
 * **Task 11:** Download Markdown feature complete. `frontend/src/App.jsx` mein `Download` icon ke sath button add kiya gaya. `handleDownload` function `Blob URL` technique use kar ke `ui2md-design.md` file generate kar raha hai. GitHub commit `42010cf` pushed.
 * **Task 12:** Dynamic Naming & Prompt Optimization complete. `api/scrape.js` mein URL se hostname extract kar ke prompt mein integrate kiya gaya. Prompt ko optimize kiya gaya taake short descriptions aur strictly code-only output mile (quota saving). GitHub commit `96ee0b0` pushed.
+* **Task 13:** SaaS Landing Page & Routing complete. `react-router-dom` setup, `LandingPage.jsx` (premium design) aur `ExtractorApp.jsx` (move tool logic) implement kiye gaye hain. `/` par marketing landing aur `/app` par extractor tool active hai. GitHub commit `b573991` pushed.
 
 ## 🧩 4. Core Logic & AI Agent Rules
 * **Rule 1 (Hyper-Focus):** Ek waqt mein sirf aur sirf **EK Task** execute karna hai.
@@ -41,12 +42,12 @@ ui-extractor-saas/
 * **Rule 4:** Task complete hone par `working.md` lazmi update karo.
 
 ## 🚧 5. Active Task (Focus on ONE at a time)
-* **Task 13:** SaaS Landing Page & Routing Implementation.
-  1. Frontend folder mein terminal open karo aur `react-router-dom` install karo (`npm install react-router-dom`).
-  2. `frontend/src/` mein 2 naye components banao: `LandingPage.jsx` aur `ExtractorApp.jsx`.
-  3. Purane `App.jsx` ka saara UI aur logic (extraction tool) `ExtractorApp.jsx` mein move kar do.
-  4. `LandingPage.jsx` mein Tailwind aur Lucide Icons use kar ke ek premium SaaS landing page design karo (Hero section, Features list, aur ek "Get Started" button).
-  5. `App.jsx` ko update kar ke usme `<BrowserRouter>` aur Routes define karo: `/` par `LandingPage` aur `/app` par `ExtractorApp` render ho.
-  6. "Get Started" button par click karne se user `/app` route par navigate hona chahiye.
-  7. Local server par test karo, successful hone par `"Feat: Added SaaS Landing Page & Routing"` commit ke sath GitHub par push karo taa ke Vercel update ho jaye.
-  8. Task complete hone par `working.md` update karo.
+* **Task 14:** Expand SaaS Landing Page & Add Security Disclaimer.
+  1. `frontend/src/LandingPage.jsx` ko open karo.
+  2. Hero section aur Feature cards ke beech/baad naye sections add karo:
+     - **"How It Works" Section:** 3 steps ka visual flow banao using Lucide icons (Link, Zap, Download).
+     - **"Use Cases" Section:** Batao ke yeh tool Agencies, Developers, aur E-commerce store owners ke liye kaise mufeed hai.
+     - **"Security & Privacy" Disclaimer Section:** Ek distinct visual banner/alert box banao (maybe with a subtle glowing border). Usme strictly mention karo: "100% Private & Secure. We do NOT store your Gemini API key on our servers. It is strictly saved in your browser's local storage and used directly from your client."
+  3. Design ko existing dark theme aur glassmorphism ke sath 100% consistent rakho.
+  4. Git commit (`"Feat: Expanded landing page with Use Cases and BYOK Disclaimer"`) kar ke GitHub par push karo taa ke Vercel update ho.
+  5. Task complete hone par `working.md` update karo.
