@@ -27,7 +27,7 @@ function App() {
     setCopied(false);
 
     try {
-      const backendUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const backendUrl = import.meta.env.VITE_API_URL || '';
       const response = await fetch(`${backendUrl}/api/scrape`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

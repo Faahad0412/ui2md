@@ -22,6 +22,9 @@ ui-extractor-saas/
 * **Task 4:** Gemini AI Integration complete. Backend mein `@google/generative-ai` aur `dotenv` configure ho gaye hain. Ab API frontend ko Puppeteer data aur prompt pass kar ke Gemini se generate shuda `DESIGN.md` markdown return kar rahi hai (Test Successful).
 * **Task 5:** Frontend UI complete. React aur Tailwind CSS se dark mode aur glassmorphism style ka premium SaaS landing page banaya gaya hai. Backend API connect kar di gayi hai along with loading spinners, error boundaries aur "Copy to Clipboard" feature.
 * **Task 6:** Production Readiness aur Environment Setup complete. CORS secure kar diya gaya hai, `.gitignore` setup add ho gaya hai, aur API calls ab `VITE_API_URL` ki madad se automatically environment URLs ko support karte hain.
+* **Task 1.1 (Bug Fix):** Git system par install nahi tha — `winget` se Git v2.53 install kar diya gaya hai.
+* **Task 7:** Git Version Control setup complete. `git init`, `.gitignore` verify, initial commit (`9df60e9`) aur GitHub push successfully complete. Repo live hai: https://github.com/Faahad0412/ui2md
+* **Task 8:** Vercel Serverless Migration complete. Express backend replace ho gaya — `api/scrape.js` serverless function ban gaya hai. `@sparticuz/chromium` + `puppeteer-core` + `@supabase/supabase-js` install aur configure ho gaye hain. Frontend `/api/scrape` (relative URL) use kar raha hai. Local test successful (`https://example.com` ka DESIGN.md generated).
 
 ## 🧩 4. Core Logic & AI Agent Rules
 * **Rule 1 (Hyper-Focus):** Ek waqt mein sirf aur sirf **EK Task** execute karna hai.
@@ -30,10 +33,4 @@ ui-extractor-saas/
 * **Rule 4:** Task complete hone par `working.md` lazmi update karo.
 
 ## 🚧 5. Active Task (Focus on ONE at a time)
-* **Task 1.1 (Bug Fix):** System par `git` command recognized nahi hai (Git installed nahi hai). Pehle Git install karna hoga.
-* **Task 7:** Local Version Control (Git) Setup.
-  1. Root directory (`ui-extractor-saas/`) mein terminal open karo aur `git init` command run karo taa ke local repository initialize ho jaye.
-  2. `git status` check karo aur make sure karo ke `.gitignore` theek se kaam kar raha hai (yani `node_modules` aur `.env` files untracked files mein show na hon).
-  3. `git add .` command se saari zaroori files ko staging area mein add karo.
-  4. `git commit -m "Initial Commit: UI2MD MVP Ready for Production"` command run kar ke local commit create karo.
-  5. Agar successfully commit ho jaye toh `working.md` update karo.
+* *(Awaiting Next Task)*

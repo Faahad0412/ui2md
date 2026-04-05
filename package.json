@@ -1,0 +1,15 @@
+{
+  "name": "ui2md",
+  "version": "1.0.0",
+  "description": "UI-to-Markdown SaaS: Extract CSS design tokens from any website",
+  "scripts": {
+    "start": "node api/scrape.js",
+    "build": "cd frontend && npm install && npm run build"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@sparticuz/chromium": "^133.0.0",
+    "@supabase/supabase-js": "^2.49.4",
+    "puppeteer-core": "^24.4.0"
+  }
+}
