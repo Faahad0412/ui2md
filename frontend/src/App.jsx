@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Copy, Sparkles, Loader2, Link as LinkIcon, CheckCircle2, ChevronRight, Code2, AlertCircle, Settings, X, KeyRound, Eye, EyeOff } from 'lucide-react';
+import { Copy, Sparkles, Loader2, Link as LinkIcon, CheckCircle2, ChevronRight, Code2, AlertCircle, Settings, X, KeyRound, Eye, EyeOff, Download } from 'lucide-react';
 
 function App() {
   const [url, setUrl] = useState('');
@@ -81,6 +81,20 @@ function App() {
       navigator.clipboard.writeText(result);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
+  const handleDownload = () => {
+    if (result) {
+      const blob = new Blob([result], { type: 'text/markdown' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'ui2md-design.md';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
     }
   };
 
@@ -254,12 +268,20 @@ function App() {
                 <Code2 className="w-5 h-5 text-indigo-400 flex-shrink-0" />
                 <h3 className="font-semibold text-slate-200">Generated DESIGN.md</h3>
               </div>
-              <button
-                onClick={copyToClipboard}
-                className="flex flex-shrink-0 items-center justify-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 rounded-lg text-sm font-medium text-slate-200 transition-colors border border-slate-700 w-full sm:w-auto"
-              >
-                {copied ? <><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Copied!</> : <><Copy className="w-4 h-4 text-slate-400" /> Copy to Clipboard</>}
-              </button>
+              <div className="flex flex-wrap gap-2 w-full sm:w-auto">
+                <button
+                  onClick={copyToClipboard}
+                  className="flex flex-1 sm:flex-none items-center justify-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 rounded-lg text-sm font-medium text-slate-200 transition-colors border border-slate-700"
+                >
+                  {copied ? <><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Copied!</> : <><Copy className="w-4 h-4 text-slate-400" /> Copy</>}
+                </button>
+                <button
+                  onClick={handleDownload}
+                  className="flex flex-1 sm:flex-none items-center justify-center gap-2 px-4 py-2 bg-indigo-600/10 hover:bg-indigo-600/20 text-indigo-400 hover:text-indigo-300 rounded-lg text-sm font-medium transition-colors border border-indigo-500/20"
+                >
+                  <Download className="w-4 h-4" /> Download .md
+                </button>
+              </div>
             </div>
             <div className="p-6 overflow-auto max-h-[600px] text-sm text-slate-300 font-mono">
               <pre className="whitespace-pre-wrap">{result}</pre>

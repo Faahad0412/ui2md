@@ -30,6 +30,7 @@ ui-extractor-saas/
 * **Task 1.2 (Bug Fix):** Gemini model string update complete. `api/scrape.js` mein `gemini-1.5-flash` ko `gemini-1.5-pro` se replace kiya gaya hai 404 error fix karne ke liye. GitHub commit `0a0b6f7` pushed.
 * **Task 1.3 (Bug Fix):** Final update for model string. `api/scrape.js` mein model `'gemini-pro-latest'` set kiya gaya hai as per AI Studio guidelines. GitHub commit `af4ad99` pushed.
 * **Task 1.4 (Bug Fix):** Free Tier bypass update. `api/scrape.js` mein model `'gemini-1.5-flash'` set kiya gaya hai taake active free tier resources use ho sakein. GitHub commit `aa02fe5` pushed.
+* **Task 1.5 (Bug Fix):** Ultimate Model Fix. `api/scrape.js` mein model strictly `'gemini-2.5-flash'` set kiya gaya hai. GitHub commit `3a2f029` force-pushed.
 
 ## 🧩 4. Core Logic & AI Agent Rules
 * **Rule 1 (Hyper-Focus):** Ek waqt mein sirf aur sirf **EK Task** execute karna hai.
@@ -38,8 +39,10 @@ ui-extractor-saas/
 * **Rule 4:** Task complete hone par `working.md` lazmi update karo.
 
 ## 🚧 5. Active Task (Focus on ONE at a time)
-* **Task 1.5 (Bug Fix):** Ultimate Model Fix (`gemini-2.5-flash`).
-  1. `api/scrape.js` ko carefully open karo.
-  2. Dhoondo ke model kahan define hai aur usay strictly `model: 'gemini-2.5-flash'` kar do (bina kisi typo ke).
-  3. Git add, commit (`"Fix: Hardcoded model to gemini-2.5-flash"`), aur force push karo.
-  4. Task complete hone par `working.md` update karo.
+* **Task 11:** Implement Download Markdown Feature.
+  1. `frontend/src/App.jsx` mein (jahan "Copy to Clipboard" ka button hai), ek naya button add karo: "Download .md". Usme Lucide React se `Download` ka icon lagao.
+  2. Ek function likho `handleDownload()`:
+     - Jo API se aya hua `markdown` text le.
+     - Ek `Blob` object banaye type `text/markdown` ke sath.
+     - Ek temporary `<a>` tag create kare, usko `URL.createObjectURL(blob)` de, `download="ui2md-design.md"` set kare, usay programmatically click kare, aur phir URL ko revoke kar de.
+  3. Local test karo, successful hone par GitHub par push karo aur `working.md` update karo.
