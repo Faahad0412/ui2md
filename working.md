@@ -33,4 +33,8 @@ ui-extractor-saas/
 * **Rule 4:** Task complete hone par `working.md` lazmi update karo.
 
 ## 🚧 5. Active Task (Focus on ONE at a time)
-* *(Awaiting Next Task)*
+* **Task 9:** Supabase Database Schema & Final Documentation.
+  1. Root folder mein ek `database.sql` file banao jisme Supabase ke liye `extractions` table bananey ki SQL query ho (columns: `id` (uuid), `url` (text), `design_markdown` (text), `created_at` (timestamp)).
+  2. `README.md` file ko completely update karo jisme "Tech Stack", "How to Deploy on Vercel", aur "Supabase Setup" ke proper steps likhe hon.
+  3. In naye changes ko dobara GitHub par push karo (`git add .`, `git commit -m "Added Supabase schema and updated Docs"`, `git push`).
+  4. Task complete hone par `working.md` update karo.
