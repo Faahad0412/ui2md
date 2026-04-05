@@ -251,8 +251,8 @@ function LandingPage() {
             © 2026 UI2MD Extractor. Built on <span className="text-indigo-400 font-bold">Bring Your Own Key</span> model.
           </p>
           <div className="flex items-center gap-6 text-sm font-bold text-slate-400 order-2 md:order-3">
-            <a href="#" className="hover:text-white transition">Privacy</a>
-            <a href="#" className="hover:text-white transition">Terms</a>
+            <Link to="/privacy" className="hover:text-white transition">Privacy</Link>
+            <Link to="/terms" className="hover:text-white transition">Terms</Link>
             <a href="https://github.com/Faahad0412/ui2md" className="hover:text-white transition">GitHub</a>
           </div>
         </div>

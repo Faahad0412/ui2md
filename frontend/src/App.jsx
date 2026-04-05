@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './LandingPage';
 import ExtractorApp from './ExtractorApp';
+import PrivacyPolicy from './PrivacyPolicy';
+import TermsOfService from './TermsOfService';
 
 function App() {
   return (
@@ -9,6 +11,8 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/app" element={<ExtractorApp />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfService />} />
       </Routes>
     </Router>
   );
